@@ -1,7 +1,7 @@
 <template>
     <div class="admin-new-post-page">
         <section class="new-post-form">
-            <form>
+            <form @submit.prevent="onSave">
                 <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
 
                 <AppControlInput v-model="editedPost.title">Title</AppControlInput>
@@ -22,3 +22,18 @@
         </section>
     </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      editedPost: {
+        author: '',
+        title: '',
+        thumbnailLink: '',
+        content: ''
+      }
+    }
+  }
+}
+</script>
